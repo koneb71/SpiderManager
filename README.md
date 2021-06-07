@@ -1,4 +1,4 @@
-# SpiderKeeper
+# SpiderManager
 
 [![Latest Version](http://img.shields.io/pypi/v/SpiderKeeper.svg)](https://pypi.python.org/pypi/SpiderKeeper)
 [![Python Versions](http://img.shields.io/pypi/pyversions/SpiderKeeper.svg)](https://pypi.python.org/pypi/SpiderKeeper)
@@ -18,9 +18,9 @@ Current Support spider service
 - [Scrapy](https://github.com/scrapy/scrapy) ( with [scrapyd](https://github.com/scrapy/scrapyd))
 
 ## Screenshot
-![job dashboard](https://raw.githubusercontent.com/DormyMo/SpiderKeeper/master/screenshot/screenshot_1.png)
-![periodic job](https://raw.githubusercontent.com/DormyMo/SpiderKeeper/master/screenshot/screenshot_2.png)
-![running stats](https://raw.githubusercontent.com/DormyMo/SpiderKeeper/master/screenshot/screenshot_3.png)
+![job dashboard](https://raw.githubusercontent.com/koneb71/SpiderManager/master/screenshot/screenshot_1.png)
+![periodic job](https://raw.githubusercontent.com/koneb71/SpiderManager/master/screenshot/screenshot_2.png)
+![running stats](https://raw.githubusercontent.com/koneb71/SpiderManager/master/screenshot/screenshot_3.png)
 
 ## Getting Started
 
@@ -29,14 +29,14 @@ Current Support spider service
 
 
 ```
-pip install spiderkeeper
+pip install spidermanager
 ```
 
 ### Deployment
 
 ``` 
 
-spiderkeeper [options]
+spidermanager [options]
 
 Options:
 
@@ -88,13 +88,14 @@ Visit:
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/DormyMo/SpiderKeeper/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/koneb71/SpiderKeeper/tags). 
 
 ## Authors
 
 - *Initial work* - [DormyMo](https://github.com/DormyMo)
+- *Continued* - [koneb71](https://github.com/koneb71)
 
-See also the list of [contributors](https://github.com/DormyMo/SpiderKeeper/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/koneb71/SpiderManager/contributors) who participated in this project.
 
 ## License
 
@@ -103,14 +104,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Contributing
 
 Contributions are welcomed!
-
-## 交流反馈
-
-QQ群：
-
-1群: 389688974（已满）
-
-2群: 285668943
-
-## 捐赠
-![Contact](https://raw.githubusercontent.com/DormyMo/SpiderKeeper/master/screenshot/donate_wechat.png)

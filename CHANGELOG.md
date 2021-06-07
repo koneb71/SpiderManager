@@ -1,4 +1,8 @@
 # SpiderKeeper Changelog
+## 1.3.0(2021-06-07)
+- Updated Requirements
+- Renamed to SpiderManager
+
 ## 1.2.0 (2017-07-24)
 - support chose server manually
 - support set cron exp manually

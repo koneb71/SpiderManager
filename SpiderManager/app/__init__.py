@@ -2,7 +2,6 @@
 import logging
 import traceback
 
-import apscheduler
 from apscheduler.schedulers.background import BackgroundScheduler
 from flask import Flask
 from flask import jsonify
@@ -12,8 +11,8 @@ from flask_restful_swagger import swagger
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.exceptions import HTTPException
 
-import SpiderKeeper
-from SpiderKeeper import config
+import SpiderManager
+from SpiderManager import config
 
 # Define the WSGI application object
 app = Flask(__name__)
@@ -30,7 +29,7 @@ app.logger.setLevel(app.config.get('LOG_LEVEL', "INFO"))
 app.logger.addHandler(handler)
 
 # swagger
-api = swagger.docs(Api(app), apiVersion=SpiderKeeper.__version__, api_spec_url="/api",
+api = swagger.docs(Api(app), apiVersion=SpiderManager.__version__, api_spec_url="/api",
                    description='SpiderKeeper')
 # Define the database object which is imported
 # by modules and controllers
@@ -78,7 +77,7 @@ def handle_error(e):
 
 
 # Build the database:
-from SpiderKeeper.app.spider.model import *
+from SpiderManager.app.spider.model import *
 
 
 def init_database():
@@ -87,8 +86,8 @@ def init_database():
 
 
 # regist spider service proxy
-from SpiderKeeper.app.proxy.spiderctrl import SpiderAgent
-from SpiderKeeper.app.proxy.contrib.scrapy import ScrapydProxy
+from SpiderManager.app.proxy.spiderctrl import SpiderAgent
+from SpiderManager.app.proxy.contrib.scrapy import ScrapydProxy
 
 agent = SpiderAgent()
 
@@ -99,13 +98,13 @@ def regist_server():
             agent.regist(ScrapydProxy(server))
 
 
-from SpiderKeeper.app.spider.controller import api_spider_bp
+from SpiderManager.app.spider.controller import api_spider_bp
 
 # Register blueprint(s)
 app.register_blueprint(api_spider_bp)
 
 # start sync job status scheduler
-from SpiderKeeper.app.schedulers.common import sync_job_execution_status_job, sync_spiders, \
+from SpiderManager.app.schedulers.common import sync_job_execution_status_job, sync_spiders, \
     reload_runnable_spider_job_execution
 
 scheduler.add_job(sync_job_execution_status_job, 'interval', seconds=5, id='sys_sync_status')

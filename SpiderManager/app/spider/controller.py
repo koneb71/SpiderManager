@@ -13,8 +13,8 @@ from flask import session
 from flask_restful_swagger import swagger
 from werkzeug.utils import secure_filename
 
-from SpiderKeeper.app import db, api, agent, app
-from SpiderKeeper.app.spider.model import JobInstance, Project, JobExecution, SpiderInstance, JobRunType
+from SpiderManager.app import db, api, agent, app
+from SpiderManager.app.spider.model import JobInstance, Project, JobExecution, SpiderInstance, JobRunType
 
 api_spider_bp = Blueprint('spider', __name__)
 

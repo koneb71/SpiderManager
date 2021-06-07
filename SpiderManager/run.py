@@ -1,8 +1,7 @@
 import logging
-import os
 from optparse import OptionParser
 
-from SpiderKeeper.app import app, initialize
+from SpiderManager.app import app, initialize
 
 
 def main():
